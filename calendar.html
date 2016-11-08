@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易年历</title>
+		<link href="calendar.css" rel="stylesheet" type="text/css"/>
+		<script>
+			window.onload=function(){
+				var arr=[
+				'快过年了，看看有什么需要准备的！',
+				'春节期间，可以好好放松咯，亲戚朋友们一起聊聊吧',
+				'该工作了，赶紧调整状态吧',
+				'春天可是美美的季节，踏青好时光',
+				'慢慢热起来了，重庆的夏天很厉害',
+				'夏天来了，可以吃西瓜，游泳，穿很少咯',
+				'重庆正热的时候，注意防暑哦！',
+				'多去游几次泳，多看看清凉美女吧',
+				'开学季，他们一定很激动吧',
+				'最喜欢的国庆节来啦，准备好为祖国庆生',
+				'天凉了，注意保暖，别感冒了',
+				'年底了，这一年收获怎么样啊'
+				]
+				var oDiv = document.getElementById('tab');
+				var myLi= document.getElementsByTagName('li');
+				var text= oDiv.getElementsByTagName('div')[0];
+			
+			for(var i=0; i<myLi.length; i++){
+				myLi[i].index=i;
+				myLi[i].onmouseover=function()
+				{
+				for(i=0; i<myLi.length;i++){
+					myLi[i].className='';
+				}
+				this.className="active";
+				
+				text.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+arr[this.index]+'</p>';
+				}
+			};
+			
+		}
+		</script>
+	</head>
+	<body>
+		<div id="tab" class='calendar'>
+			
+			<ul>
+				<li class='active'><h2>1</h2><p>JAN</p></li>
+				<li><h2>2</h2><p>FER</p></li>
+				<li><h2>3</h2><p>MAR</p></li>
+				<li><h2>4</h2><p>APR</p></li>
+				<li><h2>5</h2><p>MAY</p></li>
+				<li><h2>6</h2><p>JUN</p></li>
+				<li><h2>7</h2><p>JUL</p></li>
+				<li><h2>8</h2><p>APG</p></li>
+				<li><h2>9</h2><p>SEP</p></li>
+				<li><h2>10</h2><p>OCT</p></li>
+				<li><h2>11</h2><p>NOV</p></li>
+				<li><h2>12</h2><p>DEC</p></li>
+			</ul>
+			
+			<div class="text">
+			</div>
+			
+		</div>
+	</body>
+</html>
